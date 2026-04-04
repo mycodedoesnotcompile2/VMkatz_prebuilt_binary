@@ -12,7 +12,7 @@ env:
   CARGO_TERM_COLOR: always
   VMKATZ_REPO: https://github.com/nikaiw/VMkatz.git
   VMKATZ_ROOT_DIR: /tmp/vmkatz
-  VMKATZ_BIN_NAME: VMKatz
+  VMKATZ_BIN_NAME: vmkatz
   APT: sudo apt -y -qq -o=Dpkg::Use-Pty=0
 
 defaults:
@@ -177,7 +177,7 @@ jobs:
           echo "VMKATZ_BIN_HASH_PATH=$VMKATZ_BIN_HASH_PATH" >> $GITHUB_ENV
 
 
-      - name: List VMKatz options + signatures/extractors 
+      - name: List VMKatz options 
         run: |
           "$VMKATZ_BIN_PATH" -h || true
 
