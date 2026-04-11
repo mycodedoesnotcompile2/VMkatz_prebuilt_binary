@@ -237,6 +237,6 @@ jobs:
          make_latest: true
          body_path: ${{ env.RELEASE_NOTES }}
          name: version ${{ env.VMKATZ_VERSION }} - build ${{ env.VMKATZ_CURRENT_COMMIT_ID }}
-         tag_name: ${{ env.VMKATZ_CURRENT_COMMIT_ID }}
+         tag_name: special-${{ env.VMKATZ_CURRENT_COMMIT_ID }}
          files: |
            /tmp/results/${{ env.VMKATZ_BIN_NAME }}-*
