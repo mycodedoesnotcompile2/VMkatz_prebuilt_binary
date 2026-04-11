@@ -1,9 +1,9 @@
 name: Build binaries
 
 on:
-  workflow_dispatch
-  #schedule:
-  #  - cron: '5 5 * * *'
+  #workflow_dispatch
+  schedule:
+    - cron: '5 5 * * *'
 
 permissions:
   contents: write
@@ -237,6 +237,6 @@ jobs:
          make_latest: true
          body_path: ${{ env.RELEASE_NOTES }}
          name: version ${{ env.VMKATZ_VERSION }} - build ${{ env.VMKATZ_CURRENT_COMMIT_ID }}
-         tag_name: special-${{ env.VMKATZ_CURRENT_COMMIT_ID }}
+         tag_name: ${{ env.VMKATZ_CURRENT_COMMIT_ID }}
          files: |
            /tmp/results/${{ env.VMKATZ_BIN_NAME }}-*
